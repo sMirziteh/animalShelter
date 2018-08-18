@@ -1,0 +1,44 @@
+<div class="col l7 card">
+    <p class="red-text" *ngFor="let e of err">
+      {{e}}
+    </p>
+    <form (submit)="editPet(onePet._id)" #formData="ngForm">
+      <div class="input-field">
+          <p>Pet name:</p>
+        <input type="text" required minlength="3" #name="ngModel" name="onePet.name" [(ngModel)]="onePet.name" class="validation">
+        <p class="purple-text" *ngIf="!name.valid">Name is too short</p>
+  
+      </div>
+      <div class="input-field">
+          <p>Pet type:</p> 
+          <input type="text" required minlength="3" #type="ngModel" name="onePet.type" [(ngModel)]="onePet.type" class="validation">
+        <p class="purple-text" *ngIf="!type.valid">type is too short</p>
+        
+      </div>
+      <div class="input-field">
+          <p>Description:</p>
+          <input type="text" required minlength="3" #desc="ngModel" name="onePet.description" [(ngModel)]="onePet.description" class="validation">
+        <p class="purple-text" *ngIf="!desc.valid">description is too short</p>
+  
+      </div>
+      <p>Skills:</p>
+      <div class="row">
+        <div class="col l4">
+          <div class="input-field">
+            <input type="text" name="onePet.skill1" [(ngModel)]="onePet.skill1" class="validation" placeholder="Skill 1">
+          </div>
+          <div class="input-field">
+            <input type="text" name="onePet.skill2" [(ngModel)]="onePet.skill2" class="validation" placeholder="Skill 2">
+          </div>
+          <div class="input-field">
+            <input type="text" name="onePet.skill3" [(ngModel)]="onePet.skill3" class="validation" placeholder="Skill 3">
+          </div>
+        </div>
+      </div>
+      <p class="center-align">
+        <button *ngIf="formData.valid" type="submit" class="btn-small blue">Edit pet</button>
+        <button [routerLink]="[ '/pets/'+onePet._id ]" class="btn-small red lighten-2">Cancel</button>
+      </p>
+    </form>
+  </div>
+  

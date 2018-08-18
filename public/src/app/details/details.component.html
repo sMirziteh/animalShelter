@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col l6">
+      <h4>Details about {{onePet.name}}</h4>
+    </div>
+    <div class="col l1 offset-l5">
+      <a [routerLink]="[ '/pets' ]" routerLinkActive="active">Home</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col l5 card">
+      <table>
+        <tbody>
+          <tr>
+            <td><h5>Pet type:</h5></td>
+            <td>{{onePet.type}}</td>
+          </tr>
+          <tr>
+            <td><h5>Description:</h5></td>
+            <td>{{onePet.description}}</td>
+          </tr>
+          <tr>
+            <td><h5>Skills:</h5></td>
+            <td>
+              <p>{{onePet.skill1}}</p>
+              <p>{{onePet.skill2}}</p>
+              <p>{{onePet.skill3}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td><h5>Likes:</h5></td>
+            <td>{{onePet.likes}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <p>
+      <button *ngIf="!liked" (click)="like(onePet._id)" class="btn-small blue lighten-1">Like this pet</button>
+      <button class="btn-small green lighten-1" (click)="adopt()" >Adopt this pet!</button>
+    </p>
+  </div>
+  

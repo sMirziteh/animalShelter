@@ -1,0 +1,13 @@
+/* .ng-invalid input{
+    color: red;
+} */
+p {
+    color: black;
+}
+.ng-invalid{
+    color: red;
+}
+.ng-valid {
+    color: green;
+}
+
