@@ -9,4 +9,4 @@ router(app)
 app.all("*", (req, res, next) => {
     res.sendFile(path.resolve("./public/dist/public/index.html"))
 });
-app.listen(8000, () => console.log("server's up!!!"))
+app.listen(8000)

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
-mongoose.connect('mongodb://localhost:27017/Pet')
+mongoose.connect('mongodb://localhost:27017/Pet',{ useNewUrlParser: true })
 
 const PetSchema = new mongoose.Schema({
     name: {
